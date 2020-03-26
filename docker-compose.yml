@@ -1,0 +1,13 @@
+version: '2'
+services:
+  backend:
+    restart: unless-stopped
+    image: covid19_rus_bot:latest
+    container_name: covid19_rus_bot
+    environment:
+      - SERVICE_TYPE=covid19_rus_bot
+    ports:
+      - '5050:5050'
+    volumes: 
+        - ./data:/data
+    network_mode: host
